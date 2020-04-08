@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.accenture.sptile.mapper.UserMapper">
+
+    <resultMap id="userMap" type="com.accenture.sptile.entity.User">
+        <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="user_name" jdbcType="VARCHAR" property="userName" />
+        <result column="password" jdbcType="VARCHAR" property="password" />
+        <result column="email" jdbcType="VARCHAR" property="email" />
+    </resultMap>
+
+    <select id="checkUser" resultMap="userMap">
+        select * from user where user_name = #{userName} and password = #{password}
+    </select>
+</mapper>

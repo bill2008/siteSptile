@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.accenture.sptile.mapper.SiteMapper">
+
+    <resultMap id="siteMap" type="com.accenture.sptile.entity.Site">
+        <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="site_name" jdbcType="VARCHAR" property="siteName" />
+        <result column="site_url" jdbcType="VARCHAR" property="siteUrl" />
+    </resultMap>
+
+    <select id="getSiteList" resultMap="siteMap">
+        select * from site
+    </select>
+
+</mapper>
